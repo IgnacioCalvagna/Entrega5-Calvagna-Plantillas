@@ -1,20 +1,29 @@
-include index.pug
-section(style="text-align:center")
-    h2 agregar producto 
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    body 
 
-    div(style="width:35%; margin:0 auto")    
-        form(action='/api/productos/add' method='POST'  style="text-align:center")
-            div(class=classDiv)
-                label(class=classLabel for='name') Nombre
-                input.form-control(type='text' name='nombre' required)
-            div(class=classDiv)
-                label(class=classLabel for='name') Precio
-                input.form-control(type='number' name='precio' required)
-            div(class=classDiv)
-                label(class=classLabel for='name') Foto URL
-                input.form-control(type='url' name='img' required)
-            div(class=classDiv)
-                input.btn.btn-primary(type='submit' value='Enviar' )
-        div(class=classDiv)
-            a(href="/api/productos")
-                button.btn.btn-info Ver Productos
+        section(style="text-align:center")
+            h2 agregar producto 
+
+            div(style="width:35%; margin:0 auto")    
+                form(action='/api/productos/add' method='POST'  style="text-align:center")
+                    div(class=classDiv)
+                        label(class=classLabel for='name') Nombre
+                        input.form-control(type='text' name='nombre' required)
+                    div(class=classDiv)
+                        label(class=classLabel for='name') Precio
+                        input.form-control(type='number' name='precio' required)
+                    div(class=classDiv)
+                        label(class=classLabel for='name') Foto URL
+                        input.form-control(type='url' name='img' required)
+                    div(class=classDiv)
+                        input.btn.btn-primary(type='submit' value='Enviar' )
+                div(class=classDiv)
+                    a(href="/api/productos")
+                        button.btn.btn-info Ver Productos
