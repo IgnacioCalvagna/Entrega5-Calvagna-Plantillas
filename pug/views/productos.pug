@@ -1,0 +1,32 @@
+include index.pug
+
+
+section(style="text-align:center") 
+    h2 Productos
+
+    if productos.length !== 0
+          table.table
+            thead.bg-secondary
+                tr
+                    th #
+                    th Nombre
+                    th Precio
+                    th Foto
+                    
+            tbody.text-center
+                each producto in productos
+                    tr.text-center
+                        td.align-middle= producto.id
+                        td.align-middle= producto.nombre
+                        td.align-middle= producto.precio
+                        td.align-middle
+                            img(src=producto.img width="15%" alt=producto.nombre)
+         
+
+          a(href="./productos/add") 
+            button(class="btn btn-success") agregar productos 
+    else 
+      div   
+        h2 no hay productos
+        a(href="./productos/add") 
+          button(class="btn btn-success") agregar productos 

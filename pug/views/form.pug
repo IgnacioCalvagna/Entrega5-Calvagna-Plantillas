@@ -1,0 +1,20 @@
+include index.pug
+section(style="text-align:center")
+    h2 agregar producto 
+
+    div(style="width:35%; margin:0 auto")    
+        form(action='/api/productos/add' method='POST'  style="text-align:center")
+            div(class=classDiv)
+                label(class=classLabel for='name') Nombre
+                input.form-control(type='text' name='nombre' required)
+            div(class=classDiv)
+                label(class=classLabel for='name') Precio
+                input.form-control(type='number' name='precio' required)
+            div(class=classDiv)
+                label(class=classLabel for='name') Foto URL
+                input.form-control(type='url' name='img' required)
+            div(class=classDiv)
+                input.btn.btn-primary(type='submit' value='Enviar' )
+        div(class=classDiv)
+            a(href="/api/productos")
+                button.btn.btn-info Ver Productos
